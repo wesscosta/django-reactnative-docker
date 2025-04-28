@@ -5,7 +5,7 @@ services:
       dockerfile: docker/backend/Dockerfile
     container_name: django-backend
     ports:
-      - "8000:8000"
+      - "8001:8000"
     volumes:
       - ./backend:/app
     restart: always
