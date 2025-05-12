@@ -1,13 +1,18 @@
-import api from '../services/api'
+import api from '../api'
 
 export async function signInRequest({username, password}){
-  const response = await api.post('/api/auth/',{username, password});
+    const response = await api.post("auth/", { username, password });
+    const token = response.data.token;
 
-  const {token, user} = response.data;
-  return {token, user}; 
+  localStorage.setItem('token', token);
+  setUserTokenOnHeaders(token);
+
+  return {token}; 
 }
 
 export async function signOutRequest(){
+  localStorage.removeItem('token');
+  deleteUserTokenOnHeaders();
   return Promise.resolve();
 }
 

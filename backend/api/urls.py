@@ -11,4 +11,6 @@ router.register(r'usuarios', usuario.UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('me/', usuario.MeView.as_view(), name='me'),
+    
 ]
