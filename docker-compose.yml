@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: docker/backend/Dockerfile
     container_name: django-backend
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.dev
     ports:
       - "8001:8000"
     volumes:
