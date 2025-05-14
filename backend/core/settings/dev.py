@@ -1,6 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.19.14.8']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.19.14.3']
 DEBUG = True
 
 # Segurança desativada para ambiente local
